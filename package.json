@@ -1,0 +1,29 @@
+{
+  "name": "deepclone",
+  "version": "1.0.0",
+  "description": "JavaScript deep clone implementation",
+  "main": "dist/DeepClone.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "f=$(mktemp); babel --presets=babili src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarketm/DeepClone.git"
+  },
+  "keywords": [
+    "javascript",
+    "clone",
+    "deep-clone"
+  ],
+  "author": "Travis Clarke <travis.m.clarke@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clarketm/DeepClone/issues"
+  },
+  "homepage": "https://github.com/clarketm/DeepClone#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-babili": "^0.1.4"
+  }
+}
