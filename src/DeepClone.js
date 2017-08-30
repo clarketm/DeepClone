@@ -33,7 +33,7 @@
 export default function DeepClone(obj) {   
   let copy;    
 
-  // Handle null or undefined
+  // Handle null, undefined, and primitives
   if (obj === null || typeof obj !== "object") {
     return obj;    
   }
