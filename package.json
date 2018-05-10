@@ -1,6 +1,6 @@
 {
   "name": "deepclone",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "JavaScript deep clone implementation",
   "main": "dist/DeepClone.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "keywords": [
     "javascript",
     "clone",
-    "deep-clone" dc
+    "deep-clone"
   ],
   "author": "Travis Clarke <travis.m.clarke@gmail.com>",
   "license": "MIT",

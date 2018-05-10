@@ -2,3 +2,4 @@
 *.iml
 template
 node_modules
+*.log
