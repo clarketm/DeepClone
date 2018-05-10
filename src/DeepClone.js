@@ -45,6 +45,7 @@
  * @example
  *
  * const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b] });
+ *
  * console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b] }
  *
  */
