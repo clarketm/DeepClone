@@ -31,15 +31,12 @@
  */
 
 /**
- * @module DeepClone
- */
-
-/**
  * @typedef {object} Config
  * @property {boolean} [includeNonEnumerable=false]
  */
 
 /**
+ * @alias module:DeepClone
  * @param {object} obj
  * @param {Config} [config={}]
  * @return {object} cloned object
@@ -106,4 +103,7 @@ function DeepClone(obj, config = {}) {
   })(obj);
 }
 
+/**
+ * @module DeepClone
+ */
 export default DeepClone;
