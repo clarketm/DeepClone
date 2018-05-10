@@ -30,6 +30,19 @@
  *
  */
 
+/**
+ * @typedef {object} Config
+ * @property {boolean} [includeNonEnumerable=false]
+ */
+
+/**
+ *
+ * DeepClone
+ *
+ * @param {object} obj
+ * @param {Config} [config={}]
+ * @return {object} cloned object
+ */
 export default function DeepClone (obj, config = {}) {
   const {
     includeNonEnumerable = false
