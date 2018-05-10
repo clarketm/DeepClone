@@ -47,9 +47,10 @@ $ npm install @clarketm/deepclone
 
 **Example**  
 ```js
-const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b], [Symbol('s')]: {s: 's'} });
+const clone = DeepClone({ key1: ["1", 1, true, (a, b) => a+b], [Symbol("key2")]: {s: "s"} });
 
-console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b, [Symbol('s')]: {s: 's'}] }
+console.log(clone);
+// { key1: ["1", 1, true, (a, b) => a+b], Symbol("key2"): {s: "s"} }
 ```
 <a name="Config"></a>
 
