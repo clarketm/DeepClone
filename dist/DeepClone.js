@@ -4,7 +4,7 @@
 	(global.DeepClone = factory());
 }(this, (function () { 'use strict';
 
-function DeepClone(a){let b;if(null===a||"object"!=typeof a)return a;if(a instanceof Date)return b=new Date(a.valueOf()),b;if(a instanceof Array)return b=a.slice(0),b;if(a instanceof Object){for(let c in b={},a)a.hasOwnProperty(c)&&(b[c]=DeepClone(a[c]));return b}throw new Error(`Unable to copy object: ${a}`)}
+function DeepClone(a,b={}){const{includeNonEnumerable:c=!1}=b;return function a(b){if(null===b||'object'!=typeof b)return b;if(b instanceof Date)return new Date(b.valueOf());if(b instanceof Array){let c=[];return b.forEach((d,e)=>c[e]=a(b[e])),c}if(b instanceof Object){let d={};return Object.getOwnPropertySymbols(b).forEach((c)=>d[c]=a(b[c])),c?Object.getOwnPropertyNames(b).forEach((c)=>d[c]=a(b[c])):Object.keys(b).forEach((c)=>d[c]=a(b[c])),d}throw new Error(`Unable to copy object: ${b}`)}(a)}
 
 return DeepClone;
 

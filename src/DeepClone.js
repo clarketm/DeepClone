@@ -3,12 +3,12 @@
  * DeepClone.js
  *
  * Author: Travis Clarke (travis.m.clarke@travismclarke.com)
- * Date: Fri, Aug 25, 2017
- * Version: 1.0.0
+ * Date: Wed, May 9, 2018
+ * Version: 1.0.1
  *
  * The MIT License (MIT)
 
- * Copyright (c) 2017 - Travis Clarke - https://www.travismclarke.com
+ * Copyright (c) 2018 - Travis Clarke - https://www.travismclarke.com
 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,38 +30,66 @@
  *
  */
 
-export default function DeepClone(obj) {   
-  let copy;    
+export default function DeepClone (obj, config = {}) {
+  const {
+    includeNonEnumerable = false
+  } = config;
 
-  // Handle null, undefined, and primitives
-  if (obj === null || typeof obj !== "object") {
-    return obj;    
-  }
+  return (function _DeepClone (item) {
+    // Handle:
+    // * null
+    // * undefined
+    // * boolean
+    // * number
+    // * string
+    // * symbol
+    // * function
+    if (item === null || typeof item !== 'object') {
+      return item;
+    }
 
-  // Handle Date   
-  if (obj instanceof Date) {       
-    copy = new Date(obj.valueOf());
-    return copy;   
-  }    
+    // Handle:
+    // * Date   
+    if (item instanceof Date) {
+      return new Date(item.valueOf());
+    }
 
-  // Handle Array   
-  if (obj instanceof Array) {       
-    copy = obj.slice(0);
-    return copy;   
-  }    
+    // Handle:
+    // * Array   
+    if (item instanceof Array) {
+      let copy = [];
 
-  // Handle Object   
-  if (obj instanceof Object) {       
-    copy = {};       
-    for (let attr in obj) {           
-      if (obj.hasOwnProperty(attr)) {
-        // Recurse!
-        copy[attr] = DeepClone(obj[attr]);       
+      item.forEach((_, i) => copy[i] = _DeepClone(item[i]));
+
+      return copy;
+    }
+
+    // Handle:
+    // * Object   
+    if (item instanceof Object) {
+      let copy = {};
+
+      // Handle:
+      // * Object.symbol
+      Object.getOwnPropertySymbols(item)
+        .forEach(s => copy[s] = _DeepClone(item[s]));
+
+      // Handle:
+      // * Object.name (other)
+      if (includeNonEnumerable) {
+        Object.getOwnPropertyNames(item)
+          .forEach(k => copy[k] = _DeepClone(item[k]));
+      } else {
+        Object.keys(item)
+          .forEach(k => copy[k] = _DeepClone(item[k]));
       }
-    }       
-    return copy;   
-  }    
 
-  // Handle Error
-  throw new Error(`Unable to copy object: ${obj}`);
+      return copy;
+    }
+
+    // Handle:
+    // * Error
+    throw new Error(`Unable to copy object: ${item}`);
+
+  })(obj);
 }
