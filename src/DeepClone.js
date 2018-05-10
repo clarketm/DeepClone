@@ -36,9 +36,6 @@
  */
 
 /**
- *
- * DeepClone
- *
  * @param {object} obj
  * @param {Config} [config={}]
  * @return {object} cloned object
