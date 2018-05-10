@@ -1,5 +1,5 @@
 {
-  "name": "deepclone",
+  "name": "@clarketm/deepclone",
   "version": "1.0.0",
   "description": "JavaScript deep clone implementation",
   "main": "dist/DeepClone.js",
@@ -10,6 +10,10 @@
     "readme": "sed -i '8,$d' ./README.md ; jsdoc2md ./src/DeepClone.js >> ./README.md",
     "prep": "yarn prettier ; yarn docs ; yarn readme ; yarn build",
     "test": "mocha --opts ./mocha.opts ./test/*"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   },
   "repository": {
     "type": "git",
