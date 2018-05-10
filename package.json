@@ -5,7 +5,7 @@
   "main": "dist/DeepClone.js",
   "scripts": {
     "build": "f=$(mktemp); babel --presets=minify src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
-    "prettier": "prettier --write src/**/*.js",
+    "prettier": "prettier --write ./src/**/*.js ./test/**/*.js",
     "test": "mocha --opts ./mocha.opts ./test/*"
   },
   "repository": {

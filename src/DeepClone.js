@@ -43,12 +43,10 @@
  * @param {Config} [config={}]
  * @return {object} cloned object
  */
-function DeepClone (obj, config = {}) {
-  const {
-    includeNonEnumerable = false
-  } = config;
+function DeepClone(obj, config = {}) {
+  const { includeNonEnumerable = false } = config;
 
-  return (function _DeepClone (item) {
+  return (function _DeepClone(item) {
     // Handle:
     // * null
     // * undefined
@@ -57,44 +55,45 @@ function DeepClone (obj, config = {}) {
     // * string
     // * symbol
     // * function
-    if (item === null || typeof item !== 'object') {
+    if (item === null || typeof item !== "object") {
       return item;
     }
 
     // Handle:
-    // * Date   
+    // * Date
     if (item instanceof Date) {
       return new Date(item.valueOf());
     }
 
     // Handle:
-    // * Array   
+    // * Array
     if (item instanceof Array) {
       let copy = [];
 
-      item.forEach((_, i) => copy[i] = _DeepClone(item[i]));
+      item.forEach((_, i) => (copy[i] = _DeepClone(item[i])));
 
       return copy;
     }
 
     // Handle:
-    // * Object   
+    // * Object
     if (item instanceof Object) {
       let copy = {};
 
       // Handle:
       // * Object.symbol
-      Object.getOwnPropertySymbols(item)
-        .forEach(s => copy[s] = _DeepClone(item[s]));
+      Object.getOwnPropertySymbols(item).forEach(
+        s => (copy[s] = _DeepClone(item[s]))
+      );
 
       // Handle:
       // * Object.name (other)
       if (includeNonEnumerable) {
-        Object.getOwnPropertyNames(item)
-          .forEach(k => copy[k] = _DeepClone(item[k]));
+        Object.getOwnPropertyNames(item).forEach(
+          k => (copy[k] = _DeepClone(item[k]))
+        );
       } else {
-        Object.keys(item)
-          .forEach(k => copy[k] = _DeepClone(item[k]));
+        Object.keys(item).forEach(k => (copy[k] = _DeepClone(item[k])));
       }
 
       return copy;
@@ -103,7 +102,6 @@ function DeepClone (obj, config = {}) {
     // Handle:
     // * Error
     throw new Error(`Unable to copy object: ${item}`);
-
   })(obj);
 }
 
