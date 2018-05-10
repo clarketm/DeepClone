@@ -5,7 +5,7 @@
   "main": "dist/DeepClone.js",
   "scripts": {
     "build": "f=$(mktemp); babel --presets=babili src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
-    "test": "NODE_ENV=test mocha --opts ./mocha.opts ./test/*"
+    "test": "mocha --opts ./mocha.opts ./test/*"
   },
   "repository": {
     "type": "git",
