@@ -43,10 +43,10 @@
  * @param {Config} [config={}]
  * @return {object} cloned object
  */
-function DeepClone(obj, config = {}) {
-  const { includeNonEnumerable = false } = config;
+function DeepClone (obj, config = {}) {
+  const {includeNonEnumerable = false} = config;
 
-  return (function _DeepClone(item) {
+  return (function _DeepClone (item) {
     // Handle:
     // * null
     // * undefined
@@ -55,7 +55,7 @@ function DeepClone(obj, config = {}) {
     // * string
     // * symbol
     // * function
-    if (item === null || typeof item !== "object") {
+    if (item === null || typeof item !== 'object') {
       return item;
     }
 
