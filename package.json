@@ -4,7 +4,7 @@
   "description": "JavaScript deep clone implementation",
   "main": "dist/DeepClone.js",
   "scripts": {
-    "build": "f=$(mktemp); babel --presets=babili src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
+    "build": "f=$(mktemp); babel --presets=minify src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
     "test": "mocha --opts ./mocha.opts ./test/*"
   },
   "repository": {
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/clarketm/DeepClone#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-babili": "^0.1.4",
+    "babel-preset-minify": "^0.4.1",
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
     "sinon": "^5.0.7"
