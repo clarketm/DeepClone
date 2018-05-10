@@ -7,38 +7,32 @@ Light-weight deep clone implementation for JavaScript.
 
 ## Usage
 
-## Functions
+<a name="module_DeepClone"></a>
 
-<dl>
-<dt><a href="#DeepClone">DeepClone(obj, [config])</a> ⇒ <code>object</code></dt>
-<dd><p>DeepClone</p>
-</dd>
-</dl>
+## DeepClone
 
-<a name="DeepClone"></a>
+* [DeepClone](#module_DeepClone)
+    * [~DeepClone(obj, [config])](#module_DeepClone..DeepClone) ⇒ <code>object</code>
+    * [~Config](#module_DeepClone..Config) : <code>object</code>
 
-### DeepClone(obj, [config]) ⇒ <code>object</code>
-**Kind**: global function
-**Returns**: <code>object</code> - cloned object
+<a name="module_DeepClone..DeepClone"></a>
+
+### DeepClone~DeepClone(obj, [config]) ⇒ <code>object</code>
+**Kind**: inner method of [<code>DeepClone</code>](#module_DeepClone)  
+**Returns**: <code>object</code> - cloned object  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| obj | <code>object</code> |  |
-| [config] | [<code>Config</code>](#Config) | <code>{}</code> |
+| obj | <code>object</code> |  | 
+| [config] | <code>Config</code> | <code>{}</code> | 
 
-## Typedefs
+<a name="module_DeepClone..Config"></a>
 
-<dl>
-<dt><a href="#Config">Config</a> : <code>object</code></dt>
-<dd></dd>
-</dl>
-
-<a name="Config"></a>
-
-### Config : <code>object</code>
-**Kind**: global typedef
+### DeepClone~Config : <code>object</code>
+**Kind**: inner typedef of [<code>DeepClone</code>](#module_DeepClone)  
 **Properties**
 
 | Name | Type | Default |
 | --- | --- | --- |
-| [includeNonEnumerable] | <code>boolean</code> | <code>false</code> |
+| [includeNonEnumerable] | <code>boolean</code> | <code>false</code> | 
+

@@ -31,6 +31,10 @@
  */
 
 /**
+ * @module DeepClone
+ */
+
+/**
  * @typedef {object} Config
  * @property {boolean} [includeNonEnumerable=false]
  */

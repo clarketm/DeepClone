@@ -7,6 +7,8 @@
     "build": "f=$(mktemp); babel --presets=minify src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
     "prettier": "prettier --write ./src/**/*.js ./test/**/*.js",
     "docs": "jsdoc -d ./docs ./src/DeepClone.js -t ./template",
+    "readme": "sed -i '10,$d' ./README.md ; jsdoc2md ./src/DeepClone.js >> ./README.md",
+    "prep": "yarn prettier ; yarn docs ; yarn readme ; yarn build",
     "test": "mocha --opts ./mocha.opts ./test/*"
   },
   "repository": {
@@ -29,6 +31,7 @@
     "babel-preset-minify": "^0.4.1",
     "chai": "^4.1.2",
     "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1",
     "minami": "^1.2.3",
     "mocha": "^5.1.1",
     "sinon": "^5.0.7"
