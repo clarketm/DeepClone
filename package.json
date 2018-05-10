@@ -5,12 +5,9 @@
   "main": "dist/DeepClone.js",
   "scripts": {
     "build": "f=$(mktemp); babel --presets=minify src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
+    "prettier": "prettier --write src/**/*.js",
     "test": "mocha --opts ./mocha.opts ./test/*"
   },
-  "*.{js,json,css,md}": [
-    "prettier --write",
-    "git add"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clarketm/DeepClone.git"
@@ -30,8 +27,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-minify": "^0.4.1",
     "chai": "^4.1.2",
-    "husky": "^1.0.0-rc.4",
-    "lint-staged": "^7.1.0",
     "mocha": "^5.1.1",
     "sinon": "^5.0.7"
   }
