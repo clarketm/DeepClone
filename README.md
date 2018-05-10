@@ -40,6 +40,11 @@ Light-weight deep clone implementation for JavaScript.
 | obj | <code>object</code> |  | 
 | [config] | [<code>Config</code>](#Config) | <code>{}</code> | 
 
+**Example**  
+```js
+const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b] });
+console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b] }
+```
 <a name="Config"></a>
 
 ## Config : <code>object</code>

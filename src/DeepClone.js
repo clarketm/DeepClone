@@ -37,9 +37,16 @@
 
 /**
  * @alias module:DeepClone
+ *
  * @param {object} obj
  * @param {Config} [config={}]
  * @return {object} cloned object
+ *
+ * @example
+ *
+ * const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b] });
+ * console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b] }
+ *
  */
 function DeepClone(obj, config = {}) {
   const { includeNonEnumerable = false } = config;
