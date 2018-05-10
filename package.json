@@ -6,7 +6,7 @@
   "scripts": {
     "build": "f=$(mktemp); babel --presets=minify src/DeepClone.js > $f; rollup $f --o dist/DeepClone.js -f umd --name 'DeepClone'",
     "prettier": "prettier --write ./src/**/*.js ./test/**/*.js",
-    "docs": "jsdoc --destination ./docs ./src/DeepClone.js",
+    "docs": "jsdoc -d ./docs ./src/DeepClone.js -t ./template",
     "test": "mocha --opts ./mocha.opts ./test/*"
   },
   "repository": {
@@ -16,7 +16,7 @@
   "keywords": [
     "javascript",
     "clone",
-    "deep-clone"
+    "deep-clone" dc
   ],
   "author": "Travis Clarke <travis.m.clarke@gmail.com>",
   "license": "MIT",

@@ -1,4 +1,4 @@
-# DeepClone
+# [DeepClone](https://www.travismclarke.com/deepclone/global.html#DeepClone)
 
 Light-weight deep clone implementation for JavaScript.
 
