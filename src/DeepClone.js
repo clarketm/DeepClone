@@ -43,7 +43,7 @@
  * @param {Config} [config={}]
  * @return {object} cloned object
  */
-export default function DeepClone (obj, config = {}) {
+function DeepClone (obj, config = {}) {
   const {
     includeNonEnumerable = false
   } = config;
@@ -106,3 +106,5 @@ export default function DeepClone (obj, config = {}) {
 
   })(obj);
 }
+
+export default DeepClone;
