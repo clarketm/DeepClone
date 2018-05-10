@@ -44,9 +44,9 @@
  *
  * @example
  *
- * const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b] });
+ * const clone = DeepClone({ key: ["1", 1, true, sum: (a, b) => a+b], [Symbol('s')]: {s: 's'} });
  *
- * console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b] }
+ * console.log(clone); // { key: ["1", 1, true, sum: (a, b) => a+b, [Symbol('s')]: {s: 's'}] }
  *
  */
 function DeepClone(obj, config = {}) {
