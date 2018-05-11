@@ -1,6 +1,6 @@
 {
   "name": "@clarketm/deepclone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript deep clone implementation",
   "main": "dist/DeepClone.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "docs": "jsdoc -d ./docs ./src/DeepClone.js -t ./template",
     "readme": "sed -i '13,$d' ./README.md ; jsdoc2md ./src/DeepClone.js >> ./README.md",
     "prep": "yarn prettier ; yarn docs ; yarn readme ; yarn build",
-    "test": "mocha --opts ./mocha.opts ./test/*"
+    "test": "mocha ./test/*"
   },
   "directories": {
     "doc": "docs",
@@ -38,6 +38,7 @@
     "jsdoc-to-markdown": "^4.0.1",
     "minami": "^1.2.3",
     "mocha": "^5.1.1",
+    "prettier": "^1.12.1",
     "sinon": "^5.0.7"
   }
 }
