@@ -2,8 +2,8 @@
 
 Light-weight deep clone implementation for JavaScript.
 
-[![NPM release](https://img.shields.io/npm/v/@clarketm/DeepClone.svg)](https://www.npmjs.com/package/@clarketm/DeepClone)
-[![Build Status](https://circleci.com/gh/clarketm/DeepClone.svg?style=shield)](https://circleci.com/gh/clarketm/DeepClone)
+[![NPM release](https://img.shields.io/npm/v/@clarketm/deepclone.svg)](https://www.npmjs.com/package/@clarketm/deepclone)
+[![Build Status](https://circleci.com/gh/clarketm/deepclone.svg?style=shield)](https://circleci.com/gh/clarketm/deepclone)
 
 > ℹ️ For a standalone **Object** type with this deep clone implementation, check out the [super](https://github.com/clarketm/super) repository: [super/object](https://github.com/clarketm/super/tree/master/packages/Object#readme)
 
