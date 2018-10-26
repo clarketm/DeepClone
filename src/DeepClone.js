@@ -83,22 +83,38 @@ function DeepClone(obj, config = {}) {
     }
 
     // Handle:
+    // * Set
+    if (item instanceof Set) {
+      let copy = new Set();
+
+      item.forEach(v => copy.add(_DeepClone(v)));
+
+      return copy;
+    }
+
+    // Handle:
+    // * Map
+    if (item instanceof Map) {
+      let copy = new Map();
+
+      item.forEach((v, k) => copy.set(k, _DeepClone(v)));
+
+      return copy;
+    }
+
+    // Handle:
     // * Object
     if (item instanceof Object) {
       let copy = {};
 
       // Handle:
       // * Object.symbol
-      Object.getOwnPropertySymbols(item).forEach(
-        s => (copy[s] = _DeepClone(item[s]))
-      );
+      Object.getOwnPropertySymbols(item).forEach(s => (copy[s] = _DeepClone(item[s])));
 
       // Handle:
       // * Object.name (other)
       if (includeNonEnumerable) {
-        Object.getOwnPropertyNames(item).forEach(
-          k => (copy[k] = _DeepClone(item[k]))
-        );
+        Object.getOwnPropertyNames(item).forEach(k => (copy[k] = _DeepClone(item[k])));
       } else {
         Object.keys(item).forEach(k => (copy[k] = _DeepClone(item[k])));
       }
