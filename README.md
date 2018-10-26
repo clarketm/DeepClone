@@ -10,6 +10,8 @@ Light-weight deep clone implementation for JavaScript.
 ## Installation
 ```bash
 $ npm install @clarketm/deepclone
+```
+
 ## Modules
 
 <dl>
